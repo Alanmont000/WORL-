@@ -16,7 +16,9 @@ const PUBLIC = path.join(__dirname, 'public');
 
 app.use(bodyParser.json());
 app.use(express.static(PUBLIC));
-
+app.get('/', (req, res) => {
+  res.sendFile(path.join(PUBLIC, 'index.html'));
+});
 // --- Simple SQLite setup ---
 const dbFile = path.join(__dirname, 'data.sqlite3');
 const db = new sqlite3.Database(dbFile);
