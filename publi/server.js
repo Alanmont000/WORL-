@@ -15,7 +15,8 @@ const PORT = process.env.PORT || 4000;
 const PUBLIC = path.join(__dirname, 'public');
 
 app.use(bodyParser.json());
-app.use(express.static(PUBLIC));
+app.use(express.static(path.join(__dirname, 'publi')));
+
 
 // --- Simple SQLite setup ---
 const dbFile = path.join(__dirname, 'data.sqlite3');
